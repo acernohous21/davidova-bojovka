@@ -60,9 +60,9 @@ export const RESCUE_TASKS = [
 ]
 
 export const PIRATE_CODE = [
-  'Nikdy už nebudu mít meeting, který mohl být e-mail.',
-  'Issue je vždycky high. Nikdy low. Max kraken.',
-  'Bagr si postavím sám. A pak i ten dům.',
+  'Nikdy už nepůjdu na meeting, radši půjdu zpátky na stromy.',
+  'Issue je vždycky high. Nikdy low.',
+  'Hrad bude mít tak 6-7 věží.',
   'Na mé lodi se pije whisky. Rum je pro suchozemce.',
   'Kdo řekne „zpátky na stromy“, jde na prkno.',
   'Posádku nikdy nezradím. Ani za pivo od Majkla Punka.',
