@@ -1,0 +1,11 @@
+{
+  "name": "Kapitán David – Cesta za pokladem",
+  "short_name": "Kapitán David",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#08131d",
+  "theme_color": "#08131d",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
