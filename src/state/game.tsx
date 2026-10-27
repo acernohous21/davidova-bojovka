@@ -29,7 +29,6 @@ export interface GameState {
   jokers: Record<JokerId, number>
   irl: Record<string, IrlState>
   shipName: string
-  rivalName: string
   shots: number
   dowryShown: boolean
   majaEnabled: boolean
@@ -47,7 +46,7 @@ export type Action =
   | { type: 'SET_IRL'; id: string; patch: Partial<IrlState> }
   | { type: 'USE_JOKER'; id: JokerId }
   | { type: 'ADD_JOKER'; id: JokerId; delta: number }
-  | { type: 'SET_NAME'; key: 'shipName' | 'rivalName'; value: string }
+  | { type: 'SET_NAME'; key: 'shipName'; value: string }
   | { type: 'SHOT' }
   | { type: 'SHOW_DOWRY' }
   | { type: 'TOGGLE_MAJA' }
@@ -67,7 +66,6 @@ export function initialState(): GameState {
     jokers: { ...CONFIG.jokers },
     irl: {},
     shipName: '',
-    rivalName: '',
     shots: 0,
     dowryShown: false,
     majaEnabled: true,
@@ -164,9 +162,9 @@ export function gameReducer(state: GameState, action: Action): GameState {
   }
 }
 
-/** Nahradí zástupky {ship} a {rival} v textu. */
+/** Nahradí zástupku {ship} v textu. */
 export function fill(text: string, state: GameState): string {
-  return text.replaceAll('{ship}', state.shipName || 'Bezejmenná').replaceAll('{rival}', state.rivalName || 'Neznámý')
+  return text.replaceAll('{ship}', state.shipName || 'Bezejmenná')
 }
 
 interface Ctx {

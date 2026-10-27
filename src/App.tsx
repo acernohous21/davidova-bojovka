@@ -78,7 +78,7 @@ function StartScreen({ onAdmin }: { onAdmin: () => void }) {
         <p className="mt-2">Drž telefon u sebe, poslouchej posádku a nikomu nevěř. Hlavně ne punkerům.</p>
         <p className="mt-3 text-right font-pirate text-2xl">— tvoje budoucí posádka</p>
       </motion.div>
-      <p className="mt-6 text-base text-parchment-3">🔊 Zapni si zvuk. Hra chce občas pohyb telefonu a mikrofon.</p>
+      <p className="mt-6 text-base text-parchment-3">🔊 Zapni si zvuk (a vypni tichý režim). Hra chce občas pohyb telefonu.</p>
       <Button
         size="xl"
         full

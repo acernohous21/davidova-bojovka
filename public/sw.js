@@ -1,5 +1,5 @@
 // Jednoduchý offline cache: co se jednou načte, jede i v metru bez signálu.
-const CACHE = 'kapitan-david-v1'
+const CACHE = 'kapitan-david-v2'
 
 self.addEventListener('install', (e) => {
   self.skipWaiting()

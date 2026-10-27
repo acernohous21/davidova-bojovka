@@ -3,7 +3,7 @@ import type { CrewId } from './crew'
 /**
  * Celý příběh jako seznam kroků (obrazovek). Texty klidně přepisuj.
  *
- * V textech fungují zástupky: {ship} = jméno lodi, {rival} = jméno soupeře.
+ * V textech funguje zástupka {ship} = jméno lodi.
  *
  * Typy kroků:
  *  - chapter   úvodní obrazovka kapitoly
@@ -31,7 +31,7 @@ export type GameId =
   | 'shells'
   | 'dodge'
   | 'grab'
-  | 'shout'
+  | 'deck'
   | 'swim'
   | 'hustle'
   | 'haggle'
@@ -54,7 +54,7 @@ export type StoryStep =
   | { type: 'recruit'; who: CrewId; game: RecruitGameId }
   | { type: 'irl'; id: string; title: string; text: string; reward: number; extra?: 'kodex' }
   | { type: 'bottle'; n: number; text: string }
-  | { type: 'input'; key: 'shipName' | 'rivalName'; prompt: string; placeholder: string; button: string }
+  | { type: 'input'; key: 'shipName'; prompt: string; placeholder: string; button: string }
   | { type: 'dowry' }
   | { type: 'payoff' }
   | { type: 'treasure' }
@@ -85,8 +85,8 @@ export const STEPAN_QUOTES = [
 ]
 
 export const STORY: StoryStep[] = [
-  // ───────────── Kapitola I – Issue meeting ─────────────
-  { type: 'chapter', num: 'Kapitola I', title: 'Issue meeting', place: 'Doma' },
+  // ───────────── Kapitola I – Páteční meeting ─────────────
+  { type: 'chapter', num: 'Kapitola I', title: 'Páteční meeting', place: 'Doma' },
   { type: 'text', text: 'Sobota. Tvoje narozeniny.' },
   { type: 'text', text: 'Dneska nic. Žádná práce, žádné tickety. Jen pivo s kámošema.' },
   {
@@ -95,8 +95,8 @@ export const STORY: StoryStep[] = [
     text: '(Tahle hra je fikce. Při její výrobě nebyla poškozena žádná skutečná firma. Štěpán je ve skutečnosti skvělý šéf. Asi.)',
   },
   { type: 'text', text: 'Bzzz. Bzzz.', style: 'shout', effect: 'buzz' },
-  { type: 'text', text: 'Teams. Příchozí hovor. Sobota, šest večer.' },
-  { type: 'say', who: 'stepan', text: 'Čau Davide, máš chvilku? Je issue.' },
+  { type: 'text', text: 'Teams. Příchozí hovor. Štěpán přesunul páteční meeting na sobotu. Na šestou večer.' },
+  { type: 'say', who: 'stepan', text: 'Čau Davide, máš chvilku? Je máme tady jeden issue.' },
   {
     type: 'choice',
     prompt: 'Co uděláš?',
@@ -105,7 +105,7 @@ export const STORY: StoryStep[] = [
       { label: 'Mám narozeniny, Štěpáne', reply: 'Štěpán: „Super, všechno nejlepší. Tak se připoj, bude to pět minut.“ (Nebude.)' },
     ],
   },
-  { type: 'game', game: 'meeting', title: 'Issue meeting' },
+  { type: 'game', game: 'meeting', title: 'Páteční meeting' },
   { type: 'text', text: 'Zavěsil jsi. Poprvé v životě jsi zavěsil šéfovi.' },
   { type: 'text', text: 'Skvělý pocit. Vydržel asi čtyři vteřiny.' },
   { type: 'text', text: 'Pak ti dojde, že potřebuješ novou práci.' },
@@ -152,10 +152,11 @@ export const STORY: StoryStep[] = [
   { type: 'game', game: 'grab', title: 'Prkno' },
   { type: 'text', text: 'ŠPLOUCH!', style: 'shout', effect: 'splash' },
   { type: 'text', text: 'Kapitán Tygi letí přes palubu.' },
-  { type: 'text', text: 'Celá pirátská posádka na tebe zírá. Je čas na proslov.' },
-  { type: 'game', game: 'shout', title: 'Proslov' },
-  { type: 'text', text: 'Ticho. Pak jeden šplouch. Druhý. Třetí.' },
-  { type: 'text', text: 'Všichni piráti skáčou přes palubu za svým kapitánem.' },
+  { type: 'text', text: 'Celá pirátská posádka na tebe zírá. Ticho. Jen vítr a racci.' },
+  { type: 'say', who: 'david', text: 'JSEM NEJVĚTŠÍ PIRÁT NA SVĚTĚ, VY MRDKY, A NIKDO SE NADE MNE POVYŠOVAT NEBUDE!' },
+  { type: 'text', text: 'Piráti se na tebe vrhnou. Všichni najednou.', effect: 'shake' },
+  { type: 'game', game: 'deck', title: 'Vyčisti palubu' },
+  { type: 'text', text: 'Poslední dva piráti se na sebe podívají… a skočí přes palubu sami.' },
   { type: 'say', who: 'tygi', text: '(z vody) Ještě se potkáme, Davide! TYGI NEZAPOMÍNÁ!' },
   { type: 'text', text: 'Loď je tvoje. Jenže ty neumíš řídit nákladní loď.' },
   { type: 'text', text: 'Najedeš na mělčinu kousek od pobřeží. Zbytek musíš doplavat.' },
@@ -168,7 +169,7 @@ export const STORY: StoryStep[] = [
   { type: 'text', text: 'Bum. Bum. Bum. To je tvoje srdce.', style: 'shout', effect: 'hearts' },
   { type: 'text', text: 'Zamiloval ses. Na místě. Na somálské pláži. Do kartářky.' },
   { type: 'text', text: 'A pak ti to dojde: domů se stejně nedostaneš. Nemáš práci, peníze ani pas.' },
-  { type: 'text', text: 'A vlastně proč by ses vracel? Na Štěpána? Na issue meetingy?' },
+  { type: 'text', text: 'A vlastně proč by ses vracel? Na Štěpána? Na páteční meetingy?' },
   { type: 'text', text: 'Zůstaneš. Tady. S Esmeraldou.', style: 'shout' },
   { type: 'text', text: 'Za Esmeraldou se objeví obrovský chlap s holí. Ještě větší než gorily.', effect: 'shake' },
   { type: 'say', who: 'otec', text: 'Moje dcera? Stojí 100 velbloudů. Ani o kopyto míň.' },
@@ -209,8 +210,8 @@ export const STORY: StoryStep[] = [
   { type: 'text', text: 'Máš loď. Ale nemáš posádku.' },
   { type: 'text', text: 'Rozhlédni se kolem sebe. Ti lidi vypadají jako… piráti?' },
   { type: 'recruit', who: 'matej', game: 'ducks' },
-  { type: 'recruit', who: 'eliska', game: 'reef' },
   { type: 'recruit', who: 'kuba', game: 'banana' },
+  { type: 'recruit', who: 'lucka', game: 'kitchen' },
 
   // ───────────── Kapitola IV – Pasování na kapitána ─────────────
   { type: 'arrive', place: 'Sídlo Pirátské strany', icon: '🏛️', text: 'Až budete stát před sídlem Pirátů, klepni.' },
@@ -229,8 +230,9 @@ export const STORY: StoryStep[] = [
   { type: 'text', text: 'Kapitán David!', style: 'shout', effect: 'confetti' },
   { type: 'text', style: 'note', text: '(Posádka ti teď předá kapitánský klobouk. Sundat se smí až doma.)' },
   { type: 'text', text: 'Kapitán s licencí přitahuje další piráty.' },
-  { type: 'recruit', who: 'adam', game: 'compass' },
-  { type: 'recruit', who: 'tom', game: 'cannon' },
+  { type: 'recruit', who: 'eliska', game: 'reef' },
+  { type: 'recruit', who: 'dejv', game: 'sword' },
+  { type: 'recruit', who: 'maja', game: 'lookout' },
   { type: 'bottle', n: 2, text: 'Kapitán si zaslouží přípitek. Posádka ti podá další láhvovou poštu.' },
 
   // ───────────── Kapitola V – Skutečná posádka ─────────────
@@ -245,9 +247,8 @@ export const STORY: StoryStep[] = [
     reward: 15,
   },
   { type: 'text', text: 'Zpráva o novém kapitánovi se šíří. Z davu se oddělí další, kteří se chtějí přidat.' },
-  { type: 'recruit', who: 'lucka', game: 'kitchen' },
-  { type: 'recruit', who: 'dejv', game: 'sword' },
-  { type: 'recruit', who: 'maja', game: 'lookout' },
+  { type: 'recruit', who: 'tom', game: 'cannon' },
+  { type: 'recruit', who: 'adam', game: 'compass' },
 
   // ───────────── Kapitola VI – Křest lodi ─────────────
   { type: 'arrive', place: 'Náplavka', icon: '⚓', text: 'Až budete u vody na Náplavce, klepni.' },
@@ -276,15 +277,13 @@ export const STORY: StoryStep[] = [
   { type: 'chapter', num: 'Kapitola VII', title: 'Bitva o poklad', place: 'Hospoda' },
   { type: 'text', text: 'Poklad je blízko. Cítíš to v kostech. A v játrech.' },
   { type: 'text', text: 'Jenže v hospodě kotví soupeřova loď. Její kapitán jde po stejném pokladu.', effect: 'shake' },
-  { type: 'text', text: 'Rozhlédni se po hospodě. Kdo z hostů je soupeřův kapitán? Vyber si ho.' },
-  { type: 'input', key: 'rivalName', prompt: 'Jdi za ním a zeptej se ho na jméno.', placeholder: 'Jméno soupeře', button: 'To je on!' },
-  { type: 'say', who: 'rival', text: 'Jo, jsem {rival}. A ten poklad je můj, suchozemče.' },
+  { type: 'say', who: 'rival', text: 'Ten poklad je můj, suchozemče. Moje děla jsou větší než tvoje.' },
   { type: 'game', game: 'battle', title: 'Námořní bitva', reward: 4 },
   {
     type: 'irl',
     id: 'paka',
     title: 'Souboj kapitánů',
-    text: 'Vyzvi soupeře ({rival}) na souboj v páce. O rundu. Kapitán proti kapitánovi. Posádka fandí.',
+    text: 'Najdi v hospodě někoho, kdo vypadá jako kapitán, a vyzvi ho na souboj v páce. O rundu. Kapitán proti kapitánovi. Posádka fandí.',
     reward: 20,
   },
   { type: 'text', text: 'Bitva skončila. {ship} kotví u pokladu.', style: 'shout', effect: 'confetti' },

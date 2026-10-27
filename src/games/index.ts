@@ -1,6 +1,7 @@
 import type { ComponentType } from 'react'
 import type { GameId, RecruitGameId } from '../data/story'
 import { Battle } from './Battle'
+import { Deck } from './Deck'
 import { Dodge } from './Dodge'
 import { DrunkWalk } from './DrunkWalk'
 import { Grab } from './Grab'
@@ -19,7 +20,6 @@ import { Lookout } from './recruit/Lookout'
 import { Reef } from './recruit/Reef'
 import { Sword } from './recruit/Sword'
 import { Shells } from './Shells'
-import { Shout } from './Shout'
 import { Swim } from './Swim'
 import type { GameProps, RecruitProps } from './types'
 
@@ -32,7 +32,7 @@ export const GAMES: Record<GameId, ComponentType<GameProps>> = {
   shells: Shells,
   dodge: Dodge,
   grab: Grab,
-  shout: Shout,
+  deck: Deck,
   swim: Swim,
   hustle: Hustle,
   haggle: Haggle,

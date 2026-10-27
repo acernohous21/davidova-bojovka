@@ -44,7 +44,7 @@ Místo peněz na letenku domů:
 
 | Čas | Kde | Kapitola |
 |---|---|---|
-| 18:00 | U Davida | I – Issue meeting |
+| 18:00 | U Davida | I – Páteční meeting |
 | 18:10 | Cesta pěšky | láhvová pošta 1 + opilecká chůze |
 | 18:25 | 📍 Modrá vopice | II – Majkl Punk + Někde u Somálska |
 | 19:00 | Metro | III – Majkl se vrací |
@@ -57,8 +57,8 @@ Místo peněz na letenku domů:
 
 ## Kapitoly
 
-### I. Issue meeting · doma ✅
-- V sobotu večer volá Štěpán: „Čau Davide, máš chvilku? Je issue.“
+### I. Páteční meeting · doma ✅
+- Štěpán přesunul páteční meeting na sobotu večer: „Čau Davide, máš chvilku? Je issue.“
 - 🎮 **Meeting:** Štěpán říká své hlášky, Davidovi roste nasranost. Na konci jediné tlačítko: **DÁVÁM VÝPOVĚĎ**.
 - 🎮 **Hledání práce:** swipuje maily s odmítnutím z IT firem.
 - Jediné místo, kam teď může jít: Modrá vopice.
@@ -76,7 +76,8 @@ Místo peněz na letenku domů:
 - 🎮 **Přestřelka:** uhýbá střelbě.
 - Kapitán **Tygi** ho vede na prkno: „Běž, ty suchozemská kryso!“
 - 🎮 **ČAPNI HO:** David hodí Tygiho přes palubu.
-- 🎮 **Proslov do mikrofonu:** „JSEM NEJVĚTŠÍ PIRÁT NA SVĚTĚ, VY MRDKY, A NIKDO SE NADE MNE POVYŠOVAT NEBUDE!“ Všichni piráti skáčou přes palubu. Tygi z vody: „Ještě se potkáme!“
+- David zařve: „JSEM NEJVĚTŠÍ PIRÁT NA SVĚTĚ, VY MRDKY, A NIKDO SE NADE MNE POVYŠOVAT NEBUDE!“ Piráti se na něj vrhnou.
+- 🎮 **Vyčisti palubu:** piráti vyskakují na palubě, ťuknutím letí přes palubu (12×). Rukojmí nechat být. Tygi z vody: „Ještě se potkáme!“
 - 🎮 **Plavání ke břehu** před žralokem.
 - Pláž. Mokrý, bez bot, bez peněz.
 - 💍 Na kameni sedí žena v šátku s kartami: **Esmeralda**. „Dej mi ruku, cizinče.“
@@ -96,8 +97,8 @@ Místo peněz na letenku domů:
   - Loď kotví na Náplavce, ale je nepokřtěná. „Nepokřtěná loď nepluje, to ví každej, žejo.“
 - 👥 **Verbování:**
   1. **Matěj** – Lodní plavčík 🦩 → 🎮 zachraň topící se kachničky
-  2. **Eliška** – Kormidelnice 🧭 → 🎮 naklápěním telefonu prokormidluj loď mezi útesy (fénem fouká do plachet, když je bezvětří)
-  3. **Kuba** – Radista 🍌 → 🎮 banánový telefon + morseovka
+  2. **Kuba** – Radista 🍌 → 🎮 banánový telefon + morseovka
+  3. **Lucka** – Lodní kuchařka 🥄 → 🎮 chytej jídlo, krysy nech padat
 
 ### IV. Pasování na kapitána · 📍 Sídlo Pirátské strany
 - Pirát bez papírů je jen obyčejný zloděj. Potřebuje **pirátskou licenci**.
@@ -105,8 +106,9 @@ Místo peněz na letenku domů:
 - ⚔️ **IRL 2 – Pasování (12 🐪):** přesvědčit cizího člověka, aby ho pasoval na kapitána (šavle na rameno), a nahlas přečíst **Pirátský kodex**. ❓
 - Dostane **kapitánský klobouk**.
 - 👥 **Verbování:**
-  4. **Adam** – Navigátor 🧭 → 🎮 kompas, racek ho zkouší ze světových stran
-  5. **Tom** – Dělostřelec 💥 → 🎮 zaměř a vystřel z děla
+  4. **Eliška** – Kormidelnice ☸️ → 🎮 naklápěním telefonu prokormidluj loď mezi útesy (fénem fouká do plachet, když je bezvětří)
+  5. **Dejv** – Šermíř ⚔️ → 🎮 šerm, kryj rány
+  6. **Mája** – Hlídka na stěžni 🔦 → 🎮 svítíš čelovkou ve tmě a hledáš nepřátelskou loď *(když Mája nedorazí, přeskočí se)*
 - 🍾 **Láhvová pošta 2**
 
 **Pirátský kodex** (čte se nahlas):
@@ -122,9 +124,8 @@ Místo peněz na letenku domů:
 - Na pořádnou loď potřebuje víc lidí. Cizích. Skutečných.
 - ⚔️ **IRL 3 – Nábor (15 🐪):** fotka s aspoň 4 cizími lidmi v pirátské póze, všichni zařvou „ARRR!“. ❓
 - 👥 **Verbování:**
-  6. **Lucka** – Lodní kuchařka 🥄 → 🎮 chytej jídlo, krysy nech padat
-  7. **Dejv** – Šermíř ⚔️ → 🎮 šerm, kryj rány
-  8. **Mája** – Hlídka na stěžni 🔦 → 🎮 svítíš čelovkou ve tmě a hledáš nepřátelskou loď *(když Mája nedorazí, přeskočí se)*
+  7. **Tom** – Dělostřelec 💥 → 🎮 zaměř a vystřel z děla
+  8. **Adam** – Navigátor 🧭 → 🎮 kompas, racek ho zkouší ze světových stran
 
 ### VI. Křest lodi · 📍 Náplavka ✅
 - Loď je tady. Rezavá, nakloněná, krásná. Ale nepokřtěná loď nepluje.
@@ -135,9 +136,8 @@ Místo peněz na letenku domů:
 
 ### VII. Bitva o poklad · 📍 hospoda ❓
 - V hospodě kotví **soupeřova loď**. Její kapitán jde po stejném pokladu.
-- David se rozhlédne a **sám vybere**, kdo z hostů je soupeřův kapitán. Zeptá se ho na jméno a zapíše ho do appky.
 - 🎮 **Námořní bitva:** posádka pálí z děl, soupeřova loď spadne na 1 HP. Dorazit ji jde jen v reálu. (4 🐪)
-- ⚔️ **IRL 5 – Páka o rundu (20 🐪):** vyzvat vybraného soupeře na souboj v páce. ❓
+- ⚔️ **IRL 5 – Páka o rundu (20 🐪):** najít v hospodě kohokoliv, kdo vypadá jako kapitán, a vyzvat ho na souboj v páce. ❓
 - 🍾 **Láhvová pošta 4**
 
 ### 💥 Finále
@@ -148,7 +148,7 @@ Místo peněz na letenku domů:
   - „Myslel sis, že mě moře spolkne? Celou dobu jsem to byl já. Věštba, svatba, všechno. Potřeboval jsem někoho, kdo pro mě najde poklad.“
   - „Otec“ je jeden z jeho pirátů. Velbloudy už žene pryč.
 - 🎮 **ČAPNI HO podruhé:** David Tygiho chytí a hodí ho přes palubu znovu. Tentokrát i s velbloudy. 🐪💦
-- → **Poklad nalezen** → truhla s kódem z láhvové pošty. Co je v truhle, appka neřeší.
+- → **Poklad nalezen** → appka ukáže jen lodní deník (statistiky večera) a „Všechno nejlepší, kapitáne!“. Truhlu mu dáme sami mimo appku.
 
 ---
 

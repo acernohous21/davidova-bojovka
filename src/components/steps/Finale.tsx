@@ -97,6 +97,7 @@ export function Payoff({ onNext }: { onNext: () => void }) {
 export function Treasure() {
   const { state } = useGame()
   const legends = Object.values(state.irl).filter((i) => i.pct === 1).length
+  const paka = state.irl.paka?.pct
 
   useEffect(() => {
     sfx.fanfare()
@@ -117,16 +118,13 @@ export function Treasure() {
         🧰
       </motion.div>
       <p className="mt-4 font-pirate text-6xl leading-none gold-text">Poklad nalezen!</p>
-      <p className="mt-4 text-2xl leading-snug text-parchment">
-        Posádka má pro tebe truhlu. Kód k zámku jsi celou noc pil – je na papírcích z láhvové pošty.
-      </p>
 
       <div className="parchment burnt mt-8 w-full p-4 text-left">
         <p className="text-center font-pirate text-3xl">Lodní deník</p>
         <ul className="mt-2 space-y-1 text-lg">
           <li>🏴‍☠️ Kapitán: <b>David</b></li>
           <li>🚢 Loď: <b>{state.shipName || 'Bezejmenná'}</b></li>
-          <li>⚔️ Poražený soupeř: <b>{state.rivalName || 'neznámý'}</b></li>
+          <li>💪 Souboj v páce: <b>{paka === undefined ? '–' : paka === 0 ? 'prohrán' : 'vyhrán'}</b></li>
           <li>🌊 Tygi hozen přes palubu: <b>2×</b></li>
           <li>👥 Posádka: <b>{state.crew.length}</b> + 4 cizí rekruti</li>
           <li>🏆 Legendární výzvy: <b>{legends}</b></li>

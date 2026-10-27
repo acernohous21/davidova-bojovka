@@ -10,20 +10,26 @@ export function setSoundEnabled(on: boolean): void {
 
 function getCtx(): AudioContext | null {
   try {
-    if (!ctx) {
+    if (!ctx || ctx.state === 'closed') {
       const AC =
         window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext
       if (!AC) return null
       ctx = new AC()
     }
-    if (ctx.state === 'suspended') void ctx.resume()
+    // iOS po systémovém dialogu (povolení pohybu) nebo hovoru přepne kontext do 'interrupted' – ne jen 'suspended'
+    if (ctx.state !== 'running') void ctx.resume().catch(() => undefined)
     return ctx
   } catch {
     return null
   }
 }
 
-/** Zavolat při prvním kliknutí, aby se odemkl audio context (hlavně iOS). */
+let unlockListening = false
+
+/**
+ * Zavolat při prvním kliknutí, aby se odemkl audio context (hlavně iOS).
+ * Navíc při každém dalším dotyku zkusí kontext probudit, kdyby ho iOS mezitím uspal.
+ */
 export function unlockAudio(): void {
   const c = getCtx()
   if (!c) return
@@ -33,6 +39,14 @@ export function unlockAudio(): void {
   o.connect(g).connect(c.destination)
   o.start()
   o.stop(c.currentTime + 0.01)
+
+  if (unlockListening) return
+  unlockListening = true
+  const wake = () => {
+    if (ctx && ctx.state !== 'running') void ctx.resume().catch(() => undefined)
+  }
+  for (const ev of ['touchend', 'pointerup', 'click'] as const) document.addEventListener(ev, wake, { capture: true, passive: true })
+  document.addEventListener('visibilitychange', () => document.visibilityState === 'visible' && wake())
 }
 
 function tone(freq: number, at: number, duration: number, type: OscillatorType = 'sine', volume = 0.18, slideTo?: number): void {

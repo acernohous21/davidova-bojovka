@@ -32,7 +32,7 @@ export function Meeting({ onDone }: GameProps) {
     <div className="flex flex-1 flex-col">
       <div className="rounded-2xl bg-[#1f1f2b] p-3 ring-1 ring-white/10">
         <div className="flex items-center justify-between text-sm text-white/70">
-          <span>🔴 Issue meeting (urgent!!!)</span>
+          <span>🔴 Páteční meeting (přesunuto na sobotu!!!)</span>
           <span className="tabular-nums">{time}</span>
         </div>
         <div className="mt-2 grid grid-cols-2 gap-2">

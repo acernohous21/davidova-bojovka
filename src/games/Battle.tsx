@@ -17,7 +17,6 @@ export function Battle({ onDone }: GameProps) {
   const [over, setOver] = useState(false)
   const lastShot = useRef(0)
   const ship = state.shipName || 'Tvoje loď'
-  const rival = state.rivalName || 'soupeř'
 
   useEffect(() => {
     if (!started || over) return
@@ -48,10 +47,10 @@ export function Battle({ onDone }: GameProps) {
 
   return (
     <div className="flex flex-1 flex-col">
-      <GameTitle title="Námořní bitva" subtitle={`${ship} proti lodi kapitána ${rival}. Pal, co to dá!`} />
+      <GameTitle title="Námořní bitva" subtitle={`${ship} proti soupeřově lodi. Pal, co to dá!`} />
 
       <div className="mt-4 space-y-2">
-        <ShipBar name={`🏴‍☠️ ${rival}`} hp={enemy} color="bg-blood-2" />
+        <ShipBar name="🏴‍☠️ Soupeř" hp={enemy} color="bg-blood-2" />
         <ShipBar name={`⚓ ${ship}`} hp={ours} color="bg-foam" />
       </div>
 
@@ -73,7 +72,7 @@ export function Battle({ onDone }: GameProps) {
       ) : over ? (
         <motion.div className="mt-5 text-center" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
           <p className="text-2xl leading-snug text-parchment">
-            Loď kapitána {rival} se drží na posledním prkně. Děla to nedorazí. Tohle se musí rozhodnout v reálu.
+            Soupeřova loď se drží na posledním prkně. Děla to nedorazí. Tohle se musí rozhodnout v reálu.
           </p>
           <Button size="lg" full className="mt-4" onClick={() => onDone({ score: 1, message: 'Kořist z trosek: pár mincí a jedna mokrá ponožka.' })}>
             Vylodit se

@@ -81,49 +81,6 @@ export function useTilt(active: boolean) {
   return { tilt: ref, seen }
 }
 
-/** Hlasitost z mikrofonu 0..1 (ref, aktualizuje se každý frame). */
-export function useMicLevel() {
-  const level = useRef(0)
-  const [status, setStatus] = useState<'idle' | 'on' | 'denied'>('idle')
-  const cleanup = useRef<() => void>(() => {})
-
-  const start = useCallback(async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({
-        audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false },
-      })
-      const AC = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext
-      const ac = new AC()
-      const src = ac.createMediaStreamSource(stream)
-      const an = ac.createAnalyser()
-      an.fftSize = 1024
-      src.connect(an)
-      const buf = new Float32Array(an.fftSize)
-      let raf = 0
-      const loop = () => {
-        an.getFloatTimeDomainData(buf)
-        let sum = 0
-        for (let i = 0; i < buf.length; i++) sum += buf[i] * buf[i]
-        level.current = Math.min(1, Math.sqrt(sum / buf.length) * 4)
-        raf = requestAnimationFrame(loop)
-      }
-      loop()
-      cleanup.current = () => {
-        cancelAnimationFrame(raf)
-        stream.getTracks().forEach((t) => t.stop())
-        void ac.close()
-      }
-      setStatus('on')
-    } catch {
-      setStatus('denied')
-    }
-  }, [])
-
-  useEffect(() => () => cleanup.current(), [])
-
-  return { level, status, start }
-}
-
 /** requestAnimationFrame smyčka s delta časem v sekundách. */
 export function useFrame(active: boolean, fn: (dt: number, t: number) => void) {
   const cb = useRef(fn)

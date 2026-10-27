@@ -193,7 +193,7 @@ export function InputView({ step, onNext }: { step: Of<'input'>; onNext: () => v
         disabled={!ok}
         onClick={() => {
           dispatch({ type: 'SET_NAME', key: step.key, value: value.trim() })
-          dispatch({ type: 'LOG', text: step.key === 'shipName' ? `Loď pokřtěna: ${value.trim()}` : `Soupeř odhalen: ${value.trim()}` })
+          dispatch({ type: 'LOG', text: `Loď pokřtěna: ${value.trim()}` })
           onNext()
         }}
       >
