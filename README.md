@@ -14,12 +14,13 @@ Build: `npm run build`. Workflow v `.github/workflows/deploy.yml` nasadí appku 
 ## Pro posádku
 
 - **PIN:** `7777` (změna v `src/data/config.ts`). Chce ho hodnocení velkých výzev a admin.
-- **Admin:** podrž lebku ☠️ vlevo nahoře (~1 s). Skok na kapitolu, přeskočení kroku, peníze, žolíky, vypnutí Máji, reset.
+- **Admin:** podrž lebku ☠️ vlevo nahoře (~1 s). Skok na kapitolu, přeskočení kroku, peníze, žolíky, vynulování cooldownů soubojů, reset.
+- **Souboje (PvP):** od prvního náboru David vyzývá posádku přes ⚓ → Posádka → klepnout na člena. Když vyhraje, člen pije. Cooldown 30 min na člena. Hry jsou v `DUEL_GAMES` v `src/data/config.ts`.
 - **Láhvová pošta:** na papírek patří hádanka, odpověď je heslo (velikost písmen a diakritika nevadí):
-  1. „Šéf ti řekl, kam se máš vrátit. Zpátky na…“ → `STROMY`
-  2. „Rum je pro suchozemce. Co pije pravý kapitán?“ → `WHISKY`
-  3. „Kdo tě prodal pirátům za pivo, žejo?“ → `MAJKL`
-  4. „Kdo nikdy nezapomíná?“ → `TYGI`
+  1. Doma: „Štěpán ti řekl, kam se máš vrátit. Zpátky na…“ → `STROMY`
+  2. Krčma na Národní: „Kdo tě prodal pirátům za pivo, žejo?“ → `MAJKL`
+  3. Po pasování: „Rum je pro suchozemce. Co pije pravý kapitán?“ → `WHISKY`
+  4. Náplavka po vzpouře: „Tvůj oblíbený kolega.“ → `TYGI`
 
   Na každý papírek patří i jedna číslice kódu truhly (zapiš si je do `CONFIG.bottles`). Po 3 špatných pokusech appka ukáže hádanku jako nápovědu.
 - **Offline:** appku otevři na Davidově mobilu doma na wifi. Po prvním načtení jede i v metru bez signálu.

@@ -129,6 +129,7 @@ export function Treasure() {
           <li>👥 Posádka: <b>{state.crew.length}</b> + 4 cizí rekruti</li>
           <li>🏆 Legendární výzvy: <b>{legends}</b></li>
           <li>🥃 Láhvová pošta: <b>{state.shots}</b></li>
+          <li>⚔️ Souboje s posádkou: <b>{state.duelWins} výher / {state.duelLosses} proher</b></li>
           <li>🐪 Velbloudi: <b>ukradeni (zase)</b></li>
           <li>💍 Svatba: <b>nebyla. Naštěstí.</b></li>
         </ul>

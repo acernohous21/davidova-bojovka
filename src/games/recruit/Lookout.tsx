@@ -46,7 +46,7 @@ export function Lookout({ onDone }: RecruitProps) {
 
   return (
     <div className="flex flex-1 flex-col">
-      <GameTitle title="Hlídka na stěžni" subtitle="Noc. Mája ti půjčila čelovku. Svícením prstem najdi nepřátelskou loď a klepni na ni." />
+      <GameTitle title="Hlídka na stěžni" subtitle="Noc. Roman tě vytáhl na stěžeň a půjčil ti baterku. Svícením prstem najdi nepřátelskou loď a klepni na ni." />
       <p className="mt-3 text-center font-pirate text-2xl text-gold-2">
         Nalezeno {found} / {ROUNDS}
       </p>

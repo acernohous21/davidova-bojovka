@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { CONFIG } from '../../data/config'
+import { CONFIG, DUEL_COOLDOWN_MIN } from '../../data/config'
 import { SPEAKERS, type Speaker, type StoryStep } from '../../data/story'
 import { haptic } from '../../lib/haptics'
 import { sfx } from '../../lib/sound'
@@ -198,6 +198,34 @@ export function InputView({ step, onNext }: { step: Of<'input'>; onNext: () => v
         }}
       >
         {step.button}
+      </Button>
+    </div>
+  )
+}
+
+export function PvpView({ onNext }: { onNext: () => void }) {
+  return (
+    <div className="flex flex-1 flex-col justify-center text-center">
+      <motion.p
+        className="text-8xl"
+        initial={{ scale: 0, rotate: -90 }}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{ type: 'spring', stiffness: 160, damping: 10 }}
+      >
+        ⚔️
+      </motion.p>
+      <p className="mt-4 font-pirate text-5xl leading-none text-blood-2">Pravidla se mění</p>
+      <p className="mt-2 font-pirate text-3xl text-gold-2">Hra je teď PvP</p>
+      <div className="parchment burnt mt-6 p-4 text-left text-lg leading-snug">
+        <p>Doteď tě nutila pít jen posádka. To končí.</p>
+        <p className="mt-2">
+          Každého, koho naverbuješ, můžeš vyzvat na souboj: <b>⚓ nahoře → Posádka → klepni na člena</b>.
+        </p>
+        <p className="mt-2">Vyhraješ? Pije on. Prohraješ? Nic se neděje.</p>
+        <p className="mt-2">Každý člen má po souboji {DUEL_COOLDOWN_MIN} minut klid.</p>
+      </div>
+      <Button size="lg" full className="mt-6" onClick={onNext}>
+        Jdu verbovat 🏴‍☠️
       </Button>
     </div>
   )

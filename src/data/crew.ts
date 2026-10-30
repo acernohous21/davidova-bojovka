@@ -1,4 +1,4 @@
-export type CrewId = 'matej' | 'eliska' | 'kuba' | 'adam' | 'tom' | 'lucka' | 'dejv' | 'maja'
+export type CrewId = 'matej' | 'eliska' | 'kuba' | 'adam' | 'tom' | 'lucka' | 'dejv' | 'roman'
 
 export interface CrewMember {
   id: CrewId
@@ -11,8 +11,6 @@ export interface CrewMember {
   weakness: string
   /** Nápověda na náborové kartě, dokud není naverbovaný. */
   teaser: string
-  /** Volitelný člen (může chybět – dá se vypnout v adminu). */
-  optional?: boolean
 }
 
 export const CREW: CrewMember[] = [
@@ -23,7 +21,7 @@ export const CREW: CrewMember[] = [
     icon: '🦩',
     birthday: '2003-08-22',
     skill: 'Nepotopitelný. Doslova – má rukávky i plameňáka.',
-    weakness: 'Gumové kachničky. Neodolá jim.',
+    weakness: 'Workoholismus.',
     teaser: 'Liberecký Jeremy Fragance.',
   },
   {
@@ -34,7 +32,7 @@ export const CREW: CrewMember[] = [
     birthday: '2004-01-05',
     skill: 'Spojení s celým světem přes banán.',
     weakness: 'Dal by sis ten jeho banán?',
-    teaser: 'Si atletka, pááána... já jsem skor tak, bodybuilder. Pomožem s taškou.',
+    teaser: 'Si atletka, pááána... já jsem skor tak, bodybuilder. Pomožem s taškou?',
   },
   {
     id: 'lucka',
@@ -44,7 +42,7 @@ export const CREW: CrewMember[] = [
     birthday: '2004-02-19',
     skill: 'S vařečkou uvaří cokoliv.',
     weakness: 'Nikdo neví, jestli je ten medvídek mazlíček, nebo zásoba na zimu.',
-    teaser: 'Marcus, nigga, who dat is? Its Reggie. Who tf is Reggie!?',
+    teaser: 'I pohřeb ti zaúčtuje jako mimořádný náklad.',
   },
   {
     id: 'eliska',
@@ -54,7 +52,7 @@ export const CREW: CrewMember[] = [
     birthday: '2004-06-22',
     skill: 'Proplete loď mezi útesy za každého počasí.',
     weakness: 'Levá a pravá? Ach ty řidičky.',
-    teaser: 'Vy nevidíte, že máte v kuchyni pneumatiky!?',
+    teaser: 'Your type of (cigánka) Esmeralda.',
   },
   {
     id: 'dejv',
@@ -63,19 +61,18 @@ export const CREW: CrewMember[] = [
     icon: '⚔️',
     birthday: '2003-11-13',
     skill: 'Šavle + brýle = dvojnásobná přesnost.',
-    weakness: 'Bacha na kamery, nebo přijde černoch a rozbje ti hubu.',
-    teaser: 'Co sis za to koupil? Chlast? Fet? Automaty?',
+    weakness: 'Už nemá svůj baton.',
+    teaser: 'Bacha na kamery, nebo přijde černoch a rozbje ti hubu.',
   },
   {
-    id: 'maja',
-    name: 'Mája',
+    id: 'roman',
+    name: 'Roman',
     role: 'Hlídka na stěžni',
-    icon: '🔦',
-    birthday: '2004-05-22',
-    skill: 'Vidí ve tmě. Čelovka nikdy nezhasne.',
-    weakness: 'Bacha, nebo tě zavře do podpalubí a už tě nepustí.',
-    teaser: '5 let, přijde vá to jako hodně? Pro chlapa jako jsem já by nebylo hodně ani 15.',
-    optional: true,
+    icon: '🐒',
+    birthday: '2004-07-10',
+    skill: 'Vidí všechno. A co nevidí on, vidí jeho opice.',
+    weakness: 'Španělky, Italky, Slovenky...',
+    teaser: 'Má na rameni opici, a nebo on je ta opice? Idk..',
   },
   {
     id: 'tom',
@@ -94,7 +91,7 @@ export const CREW: CrewMember[] = [
     icon: '🧭',
     birthday: '2004-06-07',
     skill: 'Vždycky ví, kde je sever.',
-    weakness: 'Neví, kde je jih. Racek na rameni taky ne.',
+    weakness: 'Neví, kolik je hodin... Ale to ty vlastně taky ne.',
     teaser: 'Davidovi kokotovi, kokot Adam',
   },
 ]

@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { CONFIG, JOKER_META, PIRATE_CODE, type JokerId } from '../data/config'
-import { CREW, crewPhoto } from '../data/crew'
+import { CREW, crewPhoto, type CrewId } from '../data/crew'
 import { formatCamels } from '../lib/text'
 import { useGame } from '../state/game'
+import { DuelPanel, duelCooldown, formatCooldown, useNow } from './Duel'
 import { Sheet } from './ui'
 
 type Tab = 'crew' | 'jokers' | 'rules' | 'log'
@@ -17,7 +18,9 @@ const TABS: { id: Tab; label: string }[] = [
 export function ShipSheet({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { state } = useGame()
   const [tab, setTab] = useState<Tab>('crew')
-  const crew = CREW.filter((c) => !c.optional || state.majaEnabled)
+  const [duel, setDuel] = useState<CrewId | null>(null)
+  const now = useNow()
+  const crew = CREW
 
   return (
     <Sheet open={open} onClose={onClose} title={state.shipName ? `Loď ${state.shipName}` : 'Tvoje loď'}>
@@ -34,29 +37,45 @@ export function ShipSheet({ open, onClose }: { open: boolean; onClose: () => voi
         ))}
       </div>
 
-      {tab === 'crew' && (
-        <div className="grid grid-cols-2 gap-3">
-          {crew.map((c) => {
-            const has = state.crew.includes(c.id)
-            return (
-              <div key={c.id} className="overflow-hidden rounded-2xl bg-sea ring-1 ring-gold/25">
-                <div className="relative aspect-[3/4]">
-                  {has ? (
-                    <img src={crewPhoto(c.id)} alt={c.name} className="h-full w-full object-cover" />
-                  ) : (
-                    <div className="grid h-full w-full place-items-center bg-deep text-5xl opacity-60">❔</div>
-                  )}
-                </div>
-                <div className="p-2 leading-tight">
-                  <p className="font-pirate text-xl text-gold-2">{has ? c.name : '???'}</p>
-                  <p className="text-sm text-parchment-3">{has ? `${c.icon} ${c.role}` : 'Ještě nenaverbován'}</p>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      )}
+      {tab === 'crew' && duel && <DuelPanel id={duel} onBack={() => setDuel(null)} />}
 
+      {tab === 'crew' && !duel && (
+        <>
+          {state.crew.length > 0 && <p className="mb-3 text-base text-parchment-3">⚔️ Klepni na člena posádky a vyzvi ho na souboj.</p>}
+          <div className="grid grid-cols-2 gap-3">
+            {crew.map((c) => {
+              const has = state.crew.includes(c.id)
+              const wait = duelCooldown(state.duels[c.id], now)
+              return (
+                <button
+                  key={c.id}
+                  type="button"
+                  disabled={!has}
+                  onClick={() => setDuel(c.id)}
+                  className="overflow-hidden rounded-2xl bg-sea text-left ring-1 ring-gold/25"
+                >
+                  <div className="relative aspect-[3/4]">
+                    {has ? (
+                      <img src={crewPhoto(c.id)} alt={c.name} className="h-full w-full object-cover" />
+                    ) : (
+                      <div className="grid h-full w-full place-items-center bg-deep text-5xl opacity-60">❔</div>
+                    )}
+                    {has && (
+                      <span className="absolute right-1.5 top-1.5 rounded-full bg-abyss/80 px-2 py-0.5 text-sm tabular-nums text-parchment">
+                        {wait > 0 ? `⏳ ${formatCooldown(wait)}` : '⚔️'}
+                      </span>
+                    )}
+                  </div>
+                  <div className="p-2 leading-tight">
+                    <p className="font-pirate text-xl text-gold-2">{has ? c.name : '???'}</p>
+                    <p className="text-sm text-parchment-3">{has ? `${c.icon} ${c.role}` : 'Ještě nenaverbován'}</p>
+                  </div>
+                </button>
+              )
+            })}
+          </div>
+        </>
+      )}
 
       {tab === 'jokers' && (
         <div className="space-y-3">

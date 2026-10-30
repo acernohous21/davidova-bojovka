@@ -5,7 +5,7 @@ import { fireConfetti } from '../lib/fx'
 import { haptic } from '../lib/haptics'
 import { sfx } from '../lib/sound'
 import { fill, useGame } from '../state/game'
-import { ArriveView, CallView, ChapterView, ChoiceView, DowryView, InputView, SayView, TextView } from './steps/Basic'
+import { ArriveView, CallView, ChapterView, ChoiceView, DowryView, InputView, PvpView, SayView, TextView } from './steps/Basic'
 import { BottleStep } from './steps/BottleStep'
 import { Payoff, Treasure } from './steps/Finale'
 import { GameStep } from './steps/GameStep'
@@ -178,6 +178,8 @@ function StepView({ step, index, onNext }: { step: StoryStep; index: number; onN
       return <InputView key={index} step={step} onNext={onNext} />
     case 'dowry':
       return <DowryView onNext={onNext} />
+    case 'pvp':
+      return <PvpView onNext={onNext} />
     case 'payoff':
       return <Payoff onNext={onNext} />
     case 'treasure':

@@ -31,7 +31,10 @@ export interface GameState {
   shipName: string
   shots: number
   dowryShown: boolean
-  majaEnabled: boolean
+  /** Kdy byl kdo naposledy vyzván na souboj (ms) – kvůli cooldownu. */
+  duels: Partial<Record<CrewId, number>>
+  duelWins: number
+  duelLosses: number
   sound: boolean
   log: LogEntry[]
 }
@@ -49,12 +52,13 @@ export type Action =
   | { type: 'SET_NAME'; key: 'shipName'; value: string }
   | { type: 'SHOT' }
   | { type: 'SHOW_DOWRY' }
-  | { type: 'TOGGLE_MAJA' }
+  | { type: 'DUEL'; id: CrewId; won: boolean; game: string }
+  | { type: 'RESET_DUELS' }
   | { type: 'TOGGLE_SOUND' }
   | { type: 'LOG'; text: string }
   | { type: 'RESET' }
 
-const STORAGE_KEY = 'kapitan-david-v2'
+const STORAGE_KEY = 'kapitan-david-v4'
 
 export function initialState(): GameState {
   return {
@@ -68,7 +72,9 @@ export function initialState(): GameState {
     shipName: '',
     shots: 0,
     dowryShown: false,
-    majaEnabled: true,
+    duels: {},
+    duelWins: 0,
+    duelLosses: 0,
     sound: true,
     log: [],
   }
@@ -86,17 +92,8 @@ export function loadState(): GameState {
   }
 }
 
-function isSkipped(state: GameState, index: number): boolean {
-  const s = STORY[index]
-  if (!s) return false
-  if (s.type === 'recruit' && CREW_BY_ID[s.who].optional && !state.majaEnabled) return true
-  return false
-}
-
-function nextIndex(state: GameState, from: number, dir: 1 | -1): number {
-  let i = from + dir
-  while (i > 0 && i < STORY.length - 1 && isSkipped(state, i)) i += dir
-  return Math.max(0, Math.min(STORY.length - 1, i))
+function nextIndex(from: number, dir: 1 | -1): number {
+  return Math.max(0, Math.min(STORY.length - 1, from + dir))
 }
 
 /** Při skoku dopředu (admin) dopočítá pasivní efekty přeskočených kroků. */
@@ -116,9 +113,9 @@ export function gameReducer(state: GameState, action: Action): GameState {
     case 'START':
       return { ...state, started: true, log: log(state, 'Hra začala. Všechno nejlepší, kapitáne!') }
     case 'NEXT':
-      return { ...state, step: nextIndex(state, state.step, 1) }
+      return { ...state, step: nextIndex(state.step, 1) }
     case 'PREV':
-      return { ...state, step: nextIndex(state, state.step, -1) }
+      return { ...state, step: nextIndex(state.step, -1) }
     case 'GOTO': {
       const to = Math.max(0, Math.min(STORY.length - 1, action.step))
       const s = to > state.step ? applySkipped(state, state.step, to) : state
@@ -149,8 +146,18 @@ export function gameReducer(state: GameState, action: Action): GameState {
       return { ...state, shots: state.shots + 1 }
     case 'SHOW_DOWRY':
       return { ...state, dowryShown: true }
-    case 'TOGGLE_MAJA':
-      return { ...state, majaEnabled: !state.majaEnabled }
+    case 'DUEL': {
+      const name = CREW_BY_ID[action.id].name
+      return {
+        ...state,
+        duels: { ...state.duels, [action.id]: Date.now() },
+        duelWins: state.duelWins + (action.won ? 1 : 0),
+        duelLosses: state.duelLosses + (action.won ? 0 : 1),
+        log: log(state, action.won ? `⚔️ ${action.game}: ${name} prohrál(a) a pije!` : `⚔️ ${action.game}: ${name} vyhrál(a). Kapitán se ztrapnil.`),
+      }
+    }
+    case 'RESET_DUELS':
+      return { ...state, duels: {} }
     case 'TOGGLE_SOUND':
       return { ...state, sound: !state.sound }
     case 'LOG':

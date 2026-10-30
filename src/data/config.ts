@@ -17,10 +17,10 @@ export const CONFIG = {
    * Na papírek patří i číslice do truhly.
    */
   bottles: {
-    1: { riddle: 'Šéf ti řekl, kam se máš vrátit. Zpátky na…', code: 'STROMY', chestDigit: '?' },
-    2: { riddle: 'Rum je pro suchozemce. Co pije pravý kapitán?', code: 'WHISKY', chestDigit: '?' },
-    3: { riddle: 'Kdo tě prodal pirátům za pivo, žejo?', code: 'MAJKL', chestDigit: '?' },
-    4: { riddle: 'Kdo nikdy nezapomíná?', code: 'TYGI', chestDigit: '?' },
+    1: { riddle: 'Štěpán ti řekl, kam se máš vrátit. Zpátky na…', code: 'STROMY', chestDigit: '?' },
+    2: { riddle: 'Kdo tě prodal pirátům za pivo, žejo?', code: 'MAJKL', chestDigit: '?' },
+    3: { riddle: 'Rum je pro suchozemce. Co pije pravý kapitán?', code: 'WHISKY', chestDigit: '?' },
+    4: { riddle: 'Tvůj oblíbený kolega.', code: 'TYGI', chestDigit: '?' },
   } as Record<number, { riddle: string; code: string; chestDigit: string }>,
 
   jokers: { parrot: 1, exemption: 1, ransom: 1 },
@@ -50,6 +50,26 @@ export const JOKER_META: Record<JokerId, { icon: string; label: string; text: st
     mult: 0,
   },
 }
+
+/** PvP souboje s naverbovanou posádkou (od prvního náboru). Prohraný člen posádky pije. */
+export const DUEL_COOLDOWN_MIN = 30
+
+export const DUEL_GAMES: { icon: string; title: string; rules: string }[] = [
+  { icon: '✊', title: 'Kámen, nůžky, papír', rules: 'Klasika. Hraje se na 2 vítězná kola.' },
+  { icon: '👍', title: 'Palcová válka', rules: 'Chyťte se za prsty, palce nahoru. Kdo přimáčkne soupeřův palec a udrží ho 3 vteřiny, vyhrál.' },
+  { icon: '🖐️', title: 'Lichá, nebo sudá', rules: 'Soupeř si tipne lichou, nebo sudou. Na „tři“ oba ukážete 0–5 prstů a sečtete je. Kdo uhodl, má bod. Na 2 vítězná kola.' },
+  {
+    icon: '🔢',
+    title: 'Kdo řekne 21',
+    rules: 'Počítáte nahlas od jedničky a střídáte se. Když jsi na řadě, řekneš jedno, dvě, nebo tři další čísla (třeba „4, 5, 6“). Kdo musí říct 21, prohrál. Začíná soupeř.',
+  },
+  { icon: '🍺', title: 'Kategorie', rules: 'Soupeř vybere kategorii (alkohol, pražské hospody, piráti…). Střídavě jmenujete věci z ní. Kdo zaváhá přes 5 vteřin nebo něco zopakuje, prohrál.' },
+  { icon: '🔤', title: 'Slovní fotbal', rules: 'Každé slovo musí začínat posledním písmenem předchozího. Kdo zaváhá přes 5 vteřin nebo zopakuje slovo, prohrál.' },
+  { icon: '😐', title: 'Nesměj se', rules: '30 vteřin se ho snažíš rozesmát, pak se role prohodí. Kdo se zasměje první, prohrál.' },
+  { icon: '👋', title: 'Plácaná', rules: 'Natáhněte proti sobě ruce dlaněmi k sobě. Útočník se snaží plácnout soupeře přes ruce, ten uhýbá. Při minutí se role prohodí. Kdo první dá 3 zásahy, vyhrál.' },
+  { icon: '🔫', title: 'Rychlé tasení', rules: 'Stoupněte si zády k sobě, ruce podél těla. Někdo z posádky odpočítá a v náhodnou chvíli zařve „TEĎ!“. Kdo se první otočí, namíří prstovou pistolí a řekne „PIF!“, vyhrál. Na 2 vítězná kola.' },
+  { icon: '🦜', title: 'ARRR!', rules: 'Střídavě počítáte od jedničky. Místo každého čísla dělitelného 7 nebo s číslicí 7 (7, 14, 17…) musíš zařvat „ARRR!“. Kdo se splete nebo zaváhá, prohrál.' },
+]
 
 export const RESCUE_TASKS = [
   'Nauč cizího člověka pirátský pozdrav („ARRR!“ + mávnutí šavlí) a nech ho ho předvést.',

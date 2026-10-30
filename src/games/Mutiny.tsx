@@ -41,7 +41,7 @@ interface Round {
 export function Mutiny({ onDone }: GameProps) {
   const { state } = useGame()
   const [rounds] = useState<Round[]>(() =>
-    shuffle(CREW.filter((c) => state.crew.includes(c.id) && (!c.optional || state.majaEnabled))).map((member) => ({
+    shuffle(CREW.filter((c) => state.crew.includes(c.id))).map((member) => ({
       member,
       options: options(member.birthday),
     })),

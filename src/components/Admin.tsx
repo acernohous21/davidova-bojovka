@@ -91,12 +91,13 @@ function AdminPanel({ onClose }: { onClose: () => void }) {
         </section>
 
         <section className="rounded-2xl bg-sea p-3">
-          <label className="flex items-center justify-between gap-3">
-            <span>
-              Mája je s námi <span className="text-parchment-3">(vypnout, když nedorazí)</span>
-            </span>
-            <input type="checkbox" className="h-6 w-6 accent-[#e0b04a]" checked={state.majaEnabled} onChange={() => dispatch({ type: 'TOGGLE_MAJA' })} />
-          </label>
+          <p className="font-pirate text-2xl text-gold-2">Souboje</p>
+          <p className="mt-1 text-parchment-3">
+            {state.duelWins} výher / {state.duelLosses} proher
+          </p>
+          <Button size="sm" variant="dark" full className="mt-2" onClick={() => dispatch({ type: 'RESET_DUELS' })}>
+            Vynulovat cooldowny
+          </Button>
         </section>
 
         <section className="rounded-2xl bg-blood/20 p-3 ring-1 ring-blood/40">

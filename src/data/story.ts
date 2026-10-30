@@ -18,6 +18,7 @@ import type { CrewId } from './crew'
  *  - bottle    láhvová pošta: panák + hádanka na papírku, odpověď = heslo
  *  - input     David něco zadá (jméno lodi, jméno soupeře)
  *  - dowry     poprvé ukáže ukazatel věna
+ *  - pvp       upozornění, že od teď může David vyzývat posádku na souboje
  *  - payoff    finále: posádka se složí na zbytek věna
  *  - treasure  poklad + lodní deník
  */
@@ -56,6 +57,7 @@ export type StoryStep =
   | { type: 'bottle'; n: number; text: string }
   | { type: 'input'; key: 'shipName'; prompt: string; placeholder: string; button: string }
   | { type: 'dowry' }
+  | { type: 'pvp' }
   | { type: 'payoff' }
   | { type: 'treasure' }
 
@@ -137,9 +139,10 @@ export const STORY: StoryStep[] = [
   { type: 'text', text: 'Za tebou se objeví dva obrovští chlapi. Gorily.', effect: 'shake' },
   { type: 'say', who: 'majkl', text: 'Sorry Davide. Ale mám dluhy, žejo. Banka zkurvená. Hahahahaha.' },
   { type: 'text', text: '…', style: 'whisper', effect: 'blackout' },
+  { type: 'text', style: 'note', text: '(Zatímco ležíš v bezvědomí: dopij, zaplať a vyraž s posádkou k metru. Další kapitolu hraješ cestou.)' },
 
   // ───────────── Někde u Somálska ─────────────
-  { type: 'chapter', num: 'O tři dny později', title: 'Někde u Somálska' },
+  { type: 'chapter', num: 'O tři dny později', title: 'Někde u Somálska', place: 'Cestou na metro' },
   { type: 'text', text: 'Houpání. Sůl. Hlava jako střep.' },
   { type: 'text', text: 'Ležíš na palubě nákladní lodi. Kolem dokola jen moře.' },
   { type: 'text', text: 'RA-TA-TA-TA-TA!', style: 'shout', effect: 'gunfire' },
@@ -187,19 +190,21 @@ export const STORY: StoryStep[] = [
   { type: 'game', game: 'hustle', title: 'Nejstarší řemeslo' },
   { type: 'say', who: 'otec', text: 'Koza není velbloud.' },
   { type: 'text', text: 'Takhle to nepůjde. Takhle budeš kozy sbírat do smrti.' },
-  { type: 'text', text: 'Vzpomeneš si na loď. Na střelbu. Na Tygiho, jak letí přes palubu.' },
-  { type: 'text', text: 'Stanu se pirátem.', style: 'shout', effect: 'flash' },
+  { type: 'text', text: 'Zbývá poslední možnost. Zavolat domů a poprosit o pomoc.' },
   {
     type: 'irl',
-    id: 'vopice',
-    title: 'Pirátská objednávka',
-    text: 'Jdi k baru a objednej posádce rundu somálským pirátským přízvukem. Celou objednávku musíš v přízvuku vydržet. Pak se otoč k hospodě, zvedni sklenici a zařvi: „Na svobodu, vy suchozemský krysy!“',
+    id: 'volani',
+    title: 'Fandovo volání o pomoc',
+    text: 'Zavolej někomu známému (ne z posádky), dej hlasitý odposlech a úplně vážně řekni: „Hele, potřebuju pomoct. Zamiloval jsem se. Jmenuje se Esmeralda a chci si ji vzít. Jenže její táta chce věno… Nemáš náhodou 100 velbloudů? Vrátím.“ Nesmíš se zasmát a nesmíš vysvětlit, o co jde.',
     reward: 10,
   },
+  { type: 'text', text: 'Nikdo ti velbloudy nepůjčil. Svět je krutý.' },
+  { type: 'text', text: 'Vzpomeneš si na loď. Na střelbu. Na Tygiho, jak letí přes palubu.' },
+  { type: 'text', text: 'Stanu se pirátem.', style: 'shout', effect: 'flash' },
 
   // ───────────── Kapitola III – Majkl se vrací ─────────────
-  { type: 'chapter', num: 'Kapitola III', title: 'Majkl se vrací', place: 'Cestou' },
-  { type: 'text', style: 'note', text: '(Platí se a jde se. Další zastávka: Pirátská strana. Cestou ti někdo zavolá.)' },
+  { type: 'chapter', num: 'Kapitola III', title: 'Majkl se vrací', place: 'Metro' },
+  { type: 'text', style: 'note', text: '(Další zastávka: Národní třída. Cestou ti někdo zavolá.)' },
   { type: 'call', who: 'majkl', caller: 'Majkl Punk 🤘' },
   { type: 'say', who: 'majkl', text: 'Hehehe, Davide, ty žiješ, doprdele! Ty piráti mi za tebe nezaplatili, zkurvení, žejo. Tak jsem tady v Somálsku taky.' },
   { type: 'say', who: 'majkl', text: 'Vyhrál jsem od nich v kartách loď, žejo. Starou, rezavou. Ale funguje, doprdele.' },
@@ -209,13 +214,29 @@ export const STORY: StoryStep[] = [
   { type: 'text', text: 'Hovor skončil. Majkl ti ještě poslal hlasovku, kde se 47 vteřin jen směje.' },
   { type: 'text', text: 'Máš loď. Ale nemáš posádku.' },
   { type: 'text', text: 'Rozhlédni se kolem sebe. Ti lidi vypadají jako… piráti?' },
+  { type: 'pvp' },
   { type: 'recruit', who: 'matej', game: 'ducks' },
   { type: 'recruit', who: 'kuba', game: 'banana' },
   { type: 'recruit', who: 'lucka', game: 'kitchen' },
 
-  // ───────────── Kapitola IV – Pasování na kapitána ─────────────
+  // ───────────── Kapitola IV – Pirátská krčma ─────────────
+  { type: 'arrive', place: 'Národní třída', icon: '🍺', text: 'Vystupte na Národní a zapadněte do hospody, kterou vybere posádka. Až budeš sedět, klepni.' },
+  { type: 'chapter', num: 'Kapitola IV', title: 'Pirátská krčma', place: 'Národní třída' },
+  { type: 'text', text: 'Máš loď. Máš první posádku. Chybí už jen pořádná pirátská krčma.' },
+  { type: 'text', text: 'Naštěstí zrovna v jedné sedíš.' },
+  {
+    type: 'irl',
+    id: 'krcma',
+    title: 'Pirátská objednávka',
+    text: 'Jdi k baru a objednej posádce rundu somálským pirátským přízvukem. Celou objednávku musíš v přízvuku vydržet. Pak se otoč k hospodě, zvedni sklenici a zařvi: „Na svobodu, vy suchozemský krysy!“',
+    reward: 10,
+  },
+  { type: 'bottle', n: 2, text: 'Na první loď a první posádku! Posádka ti podá láhvovou poštu.' },
+  { type: 'text', style: 'note', text: '(Dopijte. Další zastávka: sídlo Pirátské strany.)' },
+
+  // ───────────── Kapitola V – Pirátská licence ─────────────
   { type: 'arrive', place: 'Sídlo Pirátské strany', icon: '🏛️', text: 'Až budete stát před sídlem Pirátů, klepni.' },
-  { type: 'chapter', num: 'Kapitola IV', title: 'Pasování na kapitána', place: 'Sídlo Pirátské strany' },
+  { type: 'chapter', num: 'Kapitola V', title: 'Pirátská licence', place: 'Sídlo Pirátské strany' },
   { type: 'text', text: 'Pirát bez papírů je jen obyčejný zloděj. Potřebuješ pirátskou licenci.' },
   { type: 'text', text: 'A kde jinde ji dostat než tady.' },
   { type: 'game', game: 'interview', title: 'Přijímací pohovor', reward: 3 },
@@ -227,17 +248,20 @@ export const STORY: StoryStep[] = [
     reward: 12,
     extra: 'kodex',
   },
+
+  // ───────────── Kapitola VI – Kapitán David ─────────────
+  { type: 'chapter', num: 'Kapitola VI', title: 'Kapitán David', place: 'Cestou na Karlák' },
   { type: 'text', text: 'Kapitán David!', style: 'shout', effect: 'confetti' },
   { type: 'text', style: 'note', text: '(Posádka ti teď předá kapitánský klobouk. Sundat se smí až doma.)' },
+  { type: 'bottle', n: 3, text: 'Kapitán si zaslouží přípitek. Posádka ti podá další láhvovou poštu.' },
   { type: 'text', text: 'Kapitán s licencí přitahuje další piráty.' },
   { type: 'recruit', who: 'eliska', game: 'reef' },
   { type: 'recruit', who: 'dejv', game: 'sword' },
-  { type: 'recruit', who: 'maja', game: 'lookout' },
-  { type: 'bottle', n: 2, text: 'Kapitán si zaslouží přípitek. Posádka ti podá další láhvovou poštu.' },
+  { type: 'recruit', who: 'roman', game: 'lookout' },
 
-  // ───────────── Kapitola V – Skutečná posádka ─────────────
+  // ───────────── Kapitola VII – Skutečná posádka ─────────────
   { type: 'arrive', place: 'Karlovo náměstí', icon: '⛲', text: 'Až budete na Karláku, klepni.' },
-  { type: 'chapter', num: 'Kapitola V', title: 'Skutečná posádka', place: 'Karlák' },
+  { type: 'chapter', num: 'Kapitola VII', title: 'Skutečná posádka', place: 'Karlák' },
   { type: 'text', text: 'Tvoje posádka je fajn. Ale na pořádnou pirátskou loď potřebuješ víc lidí. Cizích. Neznámých. Skutečných.' },
   {
     type: 'irl',
@@ -250,9 +274,9 @@ export const STORY: StoryStep[] = [
   { type: 'recruit', who: 'tom', game: 'cannon' },
   { type: 'recruit', who: 'adam', game: 'compass' },
 
-  // ───────────── Kapitola VI – Křest lodi ─────────────
+  // ───────────── Kapitola VIII – Křest lodi ─────────────
   { type: 'arrive', place: 'Náplavka', icon: '⚓', text: 'Až budete u vody na Náplavce, klepni.' },
-  { type: 'chapter', num: 'Kapitola VI', title: 'Křest lodi', place: 'Náplavka' },
+  { type: 'chapter', num: 'Kapitola VIII', title: 'Křest lodi', place: 'Náplavka' },
   { type: 'text', text: 'Tady je. Tvoje loď. Rezavá, trochu nakloněná, z komína se kouří. Krásná.' },
   { type: 'text', text: 'Jenže Majkl říkal: nepokřtěná loď nepluje.' },
   {
@@ -269,12 +293,12 @@ export const STORY: StoryStep[] = [
   { type: 'text', text: 'VZPOURA!', style: 'shout', effect: 'shake' },
   { type: 'game', game: 'mutiny', title: 'Vzpoura' },
   { type: 'text', text: 'Posádka je zase tvoje. Ti, co jsi trefil, nadšeně. Ostatní aspoň opilí.' },
-  { type: 'bottle', n: 3, text: 'Na usmířenou koluje další láhvová pošta.' },
+  { type: 'bottle', n: 4, text: 'Na usmířenou koluje poslední láhvová pošta. Pij pomalu, kapitáne.' },
   { type: 'text', text: 'Esmeralda ti posílá zprávu po rackovi: „Poklad je blízko. V hospodě. Ale bacha, nejsi jediný, kdo ho hledá.“' },
 
-  // ───────────── Kapitola VII – Bitva o poklad ─────────────
+  // ───────────── Kapitola IX – Bitva o poklad ─────────────
   { type: 'arrive', place: 'Hospoda', icon: '🍻', text: 'Vyberte hospodu. Je tam poklad. A taky nepřítel. Až budete sedět, klepni.' },
-  { type: 'chapter', num: 'Kapitola VII', title: 'Bitva o poklad', place: 'Hospoda' },
+  { type: 'chapter', num: 'Kapitola IX', title: 'Bitva o poklad', place: 'Hospoda' },
   { type: 'text', text: 'Poklad je blízko. Cítíš to v kostech. A v játrech.' },
   { type: 'text', text: 'Jenže v hospodě kotví soupeřova loď. Její kapitán jde po stejném pokladu.', effect: 'shake' },
   { type: 'say', who: 'rival', text: 'Ten poklad je můj, suchozemče. Moje děla jsou větší než tvoje.' },
@@ -287,7 +311,6 @@ export const STORY: StoryStep[] = [
     reward: 20,
   },
   { type: 'text', text: 'Bitva skončila. {ship} kotví u pokladu.', style: 'shout', effect: 'confetti' },
-  { type: 'bottle', n: 4, text: 'Poslední láhvová pošta. Pij pomalu, kapitáne.' },
 
   // ───────────── Finále ─────────────
   { type: 'chapter', num: 'Finále', title: 'Věno', place: 'Hospoda' },
