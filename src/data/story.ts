@@ -15,8 +15,8 @@ import type { CrewId } from './crew'
  *  - game      minihra (reward = max 🐪 za ni)
  *  - recruit   verbování člena posádky (minihra + karta)
  *  - irl       velká výzva v reálu, hodnotí posádka
- *  - bottle    láhvová pošta: panák + hádanka na papírku, odpověď = heslo
- *  - input     David něco zadá (jméno lodi, jméno soupeře)
+ *  - bottle    láhvová pošta: panák + hádanka na papírku, odpověď = heslo (hádanky v config.ts)
+ *  - input     David něco zadá (jméno lodi)
  *  - dowry     poprvé ukáže ukazatel věna
  *  - pvp       upozornění, že od teď může David vyzývat posádku na souboje
  *  - payoff    finále: posádka se složí na zbytek věna

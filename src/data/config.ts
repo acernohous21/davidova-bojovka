@@ -14,7 +14,8 @@ export const CONFIG = {
 
   /**
    * Láhvová pošta – na opáleném papírku je hádanka, odpověď je heslo.
-   * Na papírek patří i číslice do truhly.
+   * Pořadí podle míst: 1 doma, 2 krčma na Národní, 3 po pasování, 4 Náplavka.
+   * chestDigit = číslice kódu truhly na papírku, jen poznámka pro posádku (appka ji nepoužívá).
    */
   bottles: {
     1: { riddle: 'Štěpán ti řekl, kam se máš vrátit. Zpátky na…', code: 'STROMY', chestDigit: '?' },
@@ -46,7 +47,7 @@ export const JOKER_META: Record<JokerId, { icon: string; label: string; text: st
   ransom: {
     icon: '💰',
     label: 'Výkupné',
-    text: 'Výzvu přeskočíš, ale koupíš posádce rundu. Odměna 0 $.',
+    text: 'Výzvu přeskočíš, ale koupíš posádce rundu. Odměna 0 🐪.',
     mult: 0,
   },
 }

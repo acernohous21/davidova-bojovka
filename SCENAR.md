@@ -13,15 +13,13 @@ Scénář narozeninové hry pro Davida. Appka v mobilu, pirátské UI, příběh
 
 ## Hlavní linka: Věno pro Esmeraldu 💍🐪
 
-Místo peněz na letenku domů:
-
 - David doplave na somálskou pláž. Mokrý, bez bot, bez peněz. Na kameni sedí **Esmeralda**, somálská cikánka a kartářka.
 - Vyčte mu z ruky: „Vidím poklad. A vidím svatbu. Naši.“ David se **zamiluje na místě**.
 - Pak mu dojde, že domů se stejně nedostane: nemá práci, peníze ani pas. A proč by se vůbec vracel? Na Štěpána? Tady má Esmeraldu.
 - Jenže se objeví její otec: „Moje dcera stojí **100 velbloudů** 🐪. Ani o kopyto míň.“ David nemá ani kozu.
 - Nahoře v appce je pořád vidět **ukazatel věna** (velbloudi) a za každý úkol nějaké přibydou.
-- IRL výzvy hodnotí posádka: **0 / 50 / 100 %** odměny.
-- **Pointa:** ani perfektní hra nedá 100 velbloudů. Ve finále se posádka složí na zbytek, otec velbloudy převezme… a ukáže se, že **Esmeralda je ve skutečnosti převlečený Tygi**, který celou dobu chtěl jen poklad (viz Finále). Pak **poklad**.
+- IRL výzvy hodnotí posádka PINem: **0 / 50 / 100 %** odměny.
+- **Pointa:** reálně 100 velbloudů nikdy nenasbírá (IRL výzvy málokdy dostanou 100 %, žolíky odměnu krátí). Ve finále se posádka složí na zbytek, otec velbloudy převezme… a ukáže se, že **Esmeralda je ve skutečnosti převlečený Tygi**, který celou dobu chtěl jen poklad (viz Finále). Pak **poklad**.
 - Svatba se v příběhu jen zmíní jako Esmeraldina věštba, žádný obřad.
 
 | Zdroj | Max 🐪 |
@@ -49,7 +47,7 @@ Místo peněz na letenku domů:
 | 18:10 | Cesta pěšky | opilecká chůze |
 | 18:25 | 📍 Modrá vopice | II – Majkl Punk |
 | 18:45 | Cestou na metro | Někde u Somálska + IRL 1 (volání) |
-| 19:00 | Metro | III – Majkl se vrací + nábor Matěj, Kuba, Lucka |
+| 19:00 | Metro | III – Majkl se vrací, PvP upozornění, nábor Matěj, Kuba, Lucka |
 | 19:15 | 📍 Národní třída, hospoda ❓ *(vybere se na místě)* | IV – Pirátská krčma, IRL 2, 🍾 2 |
 | 19:45 | 📍 Sídlo Pirátské strany | V – Pirátská licence, IRL 3 |
 | 20:00 | Cestou na Karlák | VI – Kapitán David, 🍾 3 + nábor Eliška, Dejv, Roman |
@@ -65,16 +63,17 @@ Místo peněz na letenku domů:
 - Štěpán přesunul páteční meeting na sobotu večer: „Čau Davide, máš chvilku? Je issue.“
 - 🎮 **Meeting:** Štěpán říká své hlášky, Davidovi roste nasranost. Na konci jediné tlačítko: **DÁVÁM VÝPOVĚĎ**.
 - 🎮 **Hledání práce:** swipuje maily s odmítnutím z IT firem.
-- Jediné místo, kam teď může jít: Modrá vopice.
+- Jediné místo, kam teď může jít: Modrá vopice. (Pokyn: obléct bundu, odcházíme.)
 - 🍾 **Láhvová pošta 1** (posádka podá lahvičku ve dveřích)
-- 🎮 **Opilecká chůze:** naklápěním telefonu se drží na chodníku, s každým panákem je to horší.
+- 🎮 **Opilecká chůze:** naklápěním telefonu se drží na chodníku, s každou vypitou láhvovou poštou je to horší.
+- U Vopice: „Jdi dovnitř, sedni si k baru a objednej si pivo. Až budeš sedět, klepni.“
 
 ### II. Majkl Punk · 📍 Modrá vopice ✅
 - Majkl: „Hehehe, nazdar Davide, doprdele, jak se máš, žejo?“ David: „Jsem bez práce.“
-- Majkl: „Ta firma, to jsou zkurvysyni, žejo. Pojď, dáme pivo.“
-- 🎮 **Skořápky:** Majkl dá do piva prášek, David má najít čisté. Prášek je ve všech.
+- Majkl: „Ta firma, to jsou zkurvysyni, žejo. Pojď, dáme pivo. Já zvu, žejo.“
+- 🎮 **Pivo od Majkla (skořápky):** Majkl dá do piva prášek, David má najít čisté. Prášek je ve všech.
 - Za Davidem gorily. Majkl: „Sorry Davide, mám dluhy. Banka zkurvená. Hahaha.“ Tma.
-- Pokyn: dopít, zaplatit a vyrazit k metru. Další kapitola se hraje cestou.
+- Pokyn: „Zatímco ležíš v bezvědomí: dopij, zaplať a vyraž s posádkou k metru. Další kapitolu hraješ cestou.“
 
 ### Někde u Somálska · cestou na metro ✅
 - Probudí se na nákladní lodi, kterou právě přepadli somálští piráti.
@@ -83,7 +82,8 @@ Místo peněz na letenku domů:
 - 🎮 **ČAPNI HO:** David hodí Tygiho přes palubu.
 - David zařve: „JSEM NEJVĚTŠÍ PIRÁT NA SVĚTĚ, VY MRDKY, A NIKDO SE NADE MNE POVYŠOVAT NEBUDE!“ Piráti se na něj vrhnou.
 - 🎮 **Vyčisti palubu:** piráti vyskakují na palubě, ťuknutím letí přes palubu (12×). Rukojmí nechat být. Tygi z vody: „Ještě se potkáme!“
-- 🎮 **Plavání ke břehu** před žralokem.
+- Loď je jeho, ale neumí ji řídit, najede na mělčinu.
+- 🎮 **Ke břehu:** plave střídáním levé a pravé ruky, za ním žralok.
 - Pláž. Mokrý, bez bot, bez peněz.
 - 💍 Na kameni sedí žena v šátku s kartami: **Esmeralda**. „Dej mi ruku, cizinče.“
   - Vyčte mu z ruky: „Vidím poklad. Velký. A vidím svatbu. Naši.“
@@ -91,52 +91,58 @@ Místo peněz na letenku domů:
 - Pak mu to dojde: domů se stejně nedostane. Nemá práci, peníze ani pas. A proč by se vracel? Na Štěpána? Tady má Esmeraldu. **Zůstane.**
 - Objeví se její otec: „Moje dcera stojí 100 velbloudů. Ani o kopyto míň.“ → objeví se **ukazatel věna 0 / 100 🐪**.
 - Práci tu nesežene. Zbývá jen nejstarší řemeslo.
-- 🎮 **Kuplíř:** naklonit telefon, pak třást. Hodnocení zákazníka ⭐☆☆☆☆, výdělek: 1 koza. Otec: „Koza není velbloud.“
-- „Takhle to nepůjde.“ Zbývá poslední možnost: zavolat domů.
+- 🎮 **Nejstarší řemeslo:** naklonit telefon, pak třást. Hodnocení zákazníka ⭐☆☆☆☆, výdělek: 1 koza. Otec: „Koza není velbloud.“
+- „Takhle budeš kozy sbírat do smrti.“ Zbývá poslední možnost: zavolat domů a poprosit o pomoc.
 - ⚔️ **IRL 1 – Fandovo volání o pomoc (10 🐪):** zavolat známému (ne z posádky), dát hlasitý odposlech a úplně vážně: „Zamiloval jsem se do Esmeraldy, chci si ji vzít, ale její táta chce věno… Nemáš náhodou 100 velbloudů? Vrátím.“ Nesmí se zasmát ani vysvětlit, o co jde.
-- Nikdo mu velbloudy nepůjčí. Vzpomene si na piráty, jak přepadli loď. **Stane se pirátem.**
+- „Nikdo ti velbloudy nepůjčil. Svět je krutý.“ Vzpomene si na piráty, jak přepadli loď. **Stane se pirátem.**
 
 ### III. Majkl se vrací · metro ✅
+- Pokyn: další zastávka Národní třída, cestou někdo zavolá.
 - 📞 Falešný příchozí hovor od Majkla: „Davide, ty žiješ! Piráti mi za tebe nezaplatili, tak jsem v Somálsku taky.“
 - **Loď:** Majkl vyhrál v kartách od pirátů starou rezavou loď. Na moři blinká, tak ji prodá Davidovi.
   - 🎮 **Smlouvání:** odmítá každou cenu, nakonec loď prodá za „0 $ + pivo“.
   - Loď kotví na Náplavce, ale je nepokřtěná. „Nepokřtěná loď nepluje, to ví každej, žejo.“
-- ⚔️ **Hra je teď PvP** (jednorázové upozornění před prvním náborem, viz Souboje s posádkou)
+  - Pak pošle hlasovku, kde se 47 vteřin jen směje.
+- „Máš loď. Ale nemáš posádku. Ti lidi kolem vypadají jako… piráti?“
+- ⚔️ **Pravidla se mění, hra je teď PvP:** jednorázová obrazovka před prvním náborem (viz Souboje s posádkou).
 - 👥 **Verbování:**
   1. **Matěj** – Lodní plavčík 🦩 → 🎮 zachraň topící se kachničky
   2. **Kuba** – Radista 🍌 → 🎮 banánový telefon + morseovka
   3. **Lucka** – Lodní kuchařka 🥄 → 🎮 chytej jídlo, krysy nech padat
 
 ### IV. Pirátská krčma · 📍 Národní třída
-- Vystoupí se na Národní a zapadne se do hospody, kterou vybere posádka.
+- Vystoupí se na Národní a zapadne se do hospody, kterou vybere posádka. „Máš loď. Máš první posádku. Chybí už jen pořádná pirátská krčma.“
 - ⚔️ **IRL 2 – Pirátská objednávka (10 🐪):** objednat rundu somálským přízvukem a připít celé hospodě „Na svobodu, vy suchozemský krysy!“ ❓
 - 🍾 **Láhvová pošta 2** (na první loď a první posádku)
+- Pokyn: dopít, další zastávka sídlo Pirátské strany.
 
 ### V. Pirátská licence · 📍 Sídlo Pirátské strany
 - Pirát bez papírů je jen obyčejný zloděj. Potřebuje **pirátskou licenci**.
 - 🎮 **Přijímací pohovor na piráta** (parodie IT pohovoru, kam ho nikde nevzali): „Máte zkušenosti s agilním pleněním?“ Na konci: „Nastupujete ihned. Mzda: co si nakradete.“ (3 🐪)
-- ⚔️ **IRL 3 – Pasování (12 🐪):** přesvědčit cizího člověka, aby ho pasoval na kapitána (šavle na rameno), a nahlas přečíst **Pirátský kodex**. ❓
+- ⚔️ **IRL 3 – Pasování na kapitána (12 🐪):** přesvědčit cizího člověka, aby ho pasoval na kapitána (posádka půjčí šavli), kleknout si a nahlas přečíst **Pirátský kodex** (appka ho u výzvy ukáže). ❓
 
-### VI. Kapitán David · cestou na Karlák
-- „Kapitán David!“ Dostane **kapitánský klobouk**.
-- 🍾 **Láhvová pošta 3** (kapitánský přípitek)
-- 👥 **Verbování:**
-  4. **Eliška** – Kormidelnice ☸️ → 🎮 naklápěním telefonu prokormidluj loď mezi útesy
-  5. **Dejv** – Šermíř ⚔️ → 🎮 šerm, kryj rány
-  6. **Roman** – Hlídka na stěžni 🐒 → 🎮 svítíš baterkou ve tmě a hledáš nepřátelskou loď
-
-**Pirátský kodex** (čte se nahlas):
-1. Nikdy už nebudu mít meeting, který mohl být e-mail.
-2. Issue je vždycky high. Nikdy low. Max kraken.
-3. Bagr si postavím sám. A pak i ten dům.
+**Pirátský kodex** (čte se nahlas, text je v `PIRATE_CODE` v `src/data/config.ts`):
+1. Nikdy už nepůjdu na meeting, radši půjdu zpátky na stromy.
+2. Issue je vždycky high. Nikdy low.
+3. Hrad bude mít tak 6-7 věží.
 4. Na mé lodi se pije whisky. Rum je pro suchozemce.
 5. Kdo řekne „zpátky na stromy“, jde na prkno.
 6. Posádku nikdy nezradím. Ani za pivo od Majkla Punka.
 7. Poklad se dělí spravedlivě: kapitán si vezme, kolik chce, posádka zbytek.
 
+### VI. Kapitán David · cestou na Karlák
+- „Kapitán David!“ Posádka mu předá **kapitánský klobouk** (sundat se smí až doma).
+- 🍾 **Láhvová pošta 3** (kapitánský přípitek)
+- Kapitán s licencí přitahuje další piráty.
+- 👥 **Verbování:**
+  4. **Eliška** – Kormidelnice ☸️ → 🎮 naklápěním telefonu (nebo prstem) prokormidluj loď mezi útesy
+  5. **Dejv** – Šermíř ⚔️ → 🎮 šerm, kryj rány
+  6. **Roman** – Hlídka na stěžni 🐒 → 🎮 svítíš baterkou ve tmě a hledáš nepřátelskou loď
+
 ### VII. Skutečná posádka · 📍 Karlák ✅
 - Na pořádnou loď potřebuje víc lidí. Cizích. Skutečných.
-- ⚔️ **IRL 4 – Nábor (15 🐪):** fotka s aspoň 4 cizími lidmi v pirátské póze, všichni zařvou „ARRR!“. ❓
+- ⚔️ **IRL 4 – Nábor (15 🐪):** fotka s aspoň 4 cizími lidmi v pirátské póze, všichni zařvou „ARRR!“. Bonus: přesvědčit je, aby mu řekli „kapitáne“. ❓
+- Z davu se oddělí další, kteří se chtějí přidat.
 - 👥 **Verbování:**
   7. **Tom** – Dělostřelec 💥 → 🎮 zaměř a vystřel z děla
   8. **Adam** – Navigátor 🧭 → 🎮 kompas, racek ho zkouší ze světových stran
@@ -147,21 +153,23 @@ Místo peněz na letenku domů:
 - Posádka reptá: „Kde je ten poklad? Znáš nás vůbec?“ → **VZPOURA!**
 - 🎮 **Vzpoura:** fotka každého z posádky + 4 data narozenin. Trefa = 1 🐪 a věrnost, omyl = **prkno (panák)**.
 - 🍾 **Láhvová pošta 4** (poslední, na usmířenou)
+- Esmeralda posílá zprávu po rackovi: „Poklad je blízko. V hospodě. Ale bacha, nejsi jediný, kdo ho hledá.“
 
 ### IX. Bitva o poklad · 📍 hospoda ❓
-- V hospodě kotví **soupeřova loď**. Její kapitán jde po stejném pokladu.
+- V hospodě kotví **soupeřova loď**. Její kapitán (bez jména) jde po stejném pokladu.
 - 🎮 **Námořní bitva:** posádka pálí z děl, soupeřova loď spadne na 1 HP. Dorazit ji jde jen v reálu. (4 🐪)
-- ⚔️ **IRL 6 – Páka o rundu (20 🐪):** najít v hospodě kohokoliv, kdo vypadá jako kapitán, a vyzvat ho na souboj v páce. ❓
+- ⚔️ **IRL 6 – Souboj kapitánů (20 🐪):** najít v hospodě kohokoliv, kdo vypadá jako kapitán, a vyzvat ho na souboj v páce o rundu. ❓
 
-### 💥 Finále
-- Věno stojí na ~95 🐪. „Chybí ti pár velbloudů. Kapitán to sám nedá.“
-- **Posádka se složí** na zbytek → 100 🐪.
+### 💥 Finále · hospoda
+- Appka ukáže, kolik velbloudů chybí. „Kapitán to sám nedá. Kapitán nikdy nic nedá sám.“
+- **Posádka se složí** na zbytek (každý naverbovaný přihodí stejný díl) → 100 🐪.
 - Otec převezme velbloudy a odvede je. Esmeralda přistoupí k Davidovi: „Konečně, cizinče. A teď… ten poklad.“
 - **TWIST:** Esmeralda si strhne šátek. Je to **Tygi!** 😱
   - „Myslel sis, že mě moře spolkne? Celou dobu jsem to byl já. Věštba, svatba, všechno. Potřeboval jsem někoho, kdo pro mě najde poklad.“
-  - „Otec“ je jeden z jeho pirátů. Velbloudy už žene pryč.
-- 🎮 **ČAPNI HO podruhé:** David Tygiho chytí a hodí ho přes palubu znovu. Tentokrát i s velbloudy. 🐪💦
-- → **Poklad nalezen** → appka ukáže jen lodní deník (statistiky večera) a „Všechno nejlepší, kapitáne!“. Truhlu mu dáme sami mimo appku.
+  - „Otec“ je jeho kormidelník. Velbloudy už žene pryč.
+- 🎮 **Prkno podruhé:** David Tygiho chytí a hodí ho přes palubu znovu. Tentokrát i s velbloudy. 🐪💦
+- → **Poklad nalezen** → appka ukáže jen lodní deník a „Všechno nejlepší, kapitáne! 🎂“. Truhlu mu dáme sami mimo appku.
+- **Lodní deník:** kapitán, jméno lodi, souboj v páce (vyhrán/prohrán), Tygi přes palubu 2×, velikost posádky + 4 cizí rekruti, legendární výzvy (100 %), láhvová pošta, souboje s posádkou (výhry/prohry), velbloudi ukradeni, svatba nebyla.
 
 ---
 
@@ -173,7 +181,7 @@ Místo peněz na letenku domů:
 | 📜 **Výjimka** | Výzvu vymění za záchrannou z lodního deníku. Odměna ×0,75. |
 | 💰 **Výkupné** | Výzvu přeskočí, ale koupí posádce rundu. Odměna 0. |
 
-Vzdát bez žolíku = **prkno (panák)**, odměna 0.
+Vzdát bez žolíku = **prkno (panák)**, odměna 0. Žolíky jdou použít jen u IRL výzev, přehled je v ⚓ → Žolíky.
 
 **Záchranné výzvy:**
 - Naučit cizího člověka pirátský pozdrav a nechat ho ho předvést.
@@ -186,7 +194,7 @@ Vzdát bez žolíku = **prkno (panák)**, odměna 0.
 
 ## Láhvová pošta 🍾
 
-Lahvičky whisky s opáleným, srolovaným papírkem. David lahvičku vypije, rozvine papírek a v něm najde **hádanku**. Odpověď na ni je **heslo**, které zadá do appky. Na papírku je navíc **jedna číslice** kódu k truhle ❓ *(podle zámku, který koupíme)*.
+Lahvičky whisky s opáleným, srolovaným papírkem. David lahvičku vypije, rozvine papírek a v něm najde **hádanku**. Odpověď na ni je **heslo**, které zadá do appky. Po 3 špatných pokusech appka ukáže hádanku jako nápovědu. Na papírek můžeme navíc napsat **jednu číslici** kódu k truhle ❓ *(podle zámku, který koupíme; appka ji nepoužívá, `chestDigit` v configu je jen poznámka)*.
 
 | # | Kdy | Hádanka na papírku | Heslo |
 |---|---|---|---|
@@ -222,7 +230,16 @@ Od prvního náboru může David vyzvat kohokoliv naverbovaného: **⚓ → Pos�
 
 ---
 
-**Celovečerní pravidlo:** zakázaná slova **práce, meeting, issue, Štěpán, deadline**. Kdo řekne → prkno (lok/panák).
+**Celovečerní pravidlo:** zakázaná slova **práce, meeting, issue, Štěpán, deadline** (v appce v ⚓ → Kodex). Kdo řekne → prkno (lok/panák).
+
+---
+
+## Ovládání pro posádku
+
+- **PIN `7777`:** hodnocení IRL výzev a admin.
+- **Admin:** podržet lebku ☠️ vlevo nahoře (~1 s). Skok na kapitolu, přeskočení kroku, ± velbloudi, žolíky, vynulování cooldownů soubojů, reset.
+- **⚓ vpravo nahoře:** posádka (a souboje), žolíky, kodex, lodní deník.
+- Na místech s 📍 appka čeká na klepnutí „jsme tady“, aby David nečetl dopředu.
 
 ---
 
@@ -245,7 +262,7 @@ Od prvního náboru může David vyzvat kohokoliv naverbovaného: **⚓ → Pos�
 
 ## ❓ Co ještě chybí
 
-- [ ] **IRL výzvy** – všech 6 ještě projít / obměnit
+- [ ] **IRL výzvy** – všech 6 ještě projít / obměnit (texty ve `story.ts`)
 - [ ] Číslice do truhly (podle zámku)
 - [ ] Hospoda na Národní a hospoda na boss fight
 - [ ] Co bude v truhle (řešíme mimo appku)
